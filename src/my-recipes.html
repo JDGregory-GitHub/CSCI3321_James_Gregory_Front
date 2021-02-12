@@ -5,63 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favorite Recipe</title>
     <style>
-        body{
-            border-style: solid;
-            border-image: url(/images/peanutCookies.jpg) 30 round;
-            border-width: 20px;
-            border-color: #ECEBE8;
-            background-color: #1C1C1C;
-            color: #ECEBE8;
-            max-width: 1080px; 
-	        margin: 0 auto; 
+        .item1 { grid-area: r1; }
+        .item2 { grid-area: r2; }
+        .item3 { grid-area: r3; }
+        
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'r1 r2 r3';
+            grid-gap: 10px;
+            grid-row: auto;
+            padding: 10px;
         }
-        h1{
-            text-align: center;
+        .grid-container > div {
+            background-color: #1C1C1C;
+            
+            padding: 10px 10px;
             font-size: 30px;
         }
-
-        img{
-            display: block;
-            
-            margin-top: 10px;
-            margin-bottom: 30px;
-            margin-left: auto;
-            margin-right: auto;
+        .grid-container > div > h4 {
+            text-align: center;
         }
-        h2{
-            font-size: 25px;
-            margin: auto 80px;
+        .grid-container > div > img{
+            width: 100%;
+        }
+        .grid-container > div > .list{
+            font-size: 22px;
         }
 
-        li{
-            font-size: 18px;
-            margin: 10px 80px;
+        .item1{
+            border: solid;
+            border-image: url(https://images-gmi-pmc.edge-generalmills.com/dcd4f799-7353-4e56-ba50-623581cba3bc.jpg) 60 repeat;
+            border-width: 8px;
         }
+
+        .item2{
+            border: solid;
+            border-image: url(https://www.loveandoliveoil.com/wp-content/uploads/2015/08/frosted-sugar-cookies4.jpg) 60 repeat;
+            border-width: 8px;
+        }
+
+        .item3{
+            border: solid;
+            border-image: url(https://togetherasfamily.com/wp-content/uploads/2018/04/chocolate-chip-treasure-cookies-7.jpg) 80 repeat;
+            border-width: 8px;
+        }
+
+        body{   
+            background-color: #1C1C1C;
+            color: #ECEBE8;   
+        }
+        
     </style>
 </head>
 <body>
-    <h1>Peanut Butter Cookie Recipe</h1>
-    <img src="/images/peanutCookies.jpg" alt="Peanut Butter Cookies">
-    <h2>Ingredients</h2>
-    <ul>
-        <li>1/2 cup granulated sugar</li>
-        <li>1/2 cup packed brown sugar</li>
-        <li>1/2 cup peanut butter</li>
-        <li>1/4 cup shortening</li>
-        <li>1/4 cpu butter, softened</li>
-        <li>1 egg</li>
-        <li>5/4 cups all purpose flour</li>
-        <li>3/4 teaspoon baking soda</li>
-        <li>1/2 teaspoon baking powder</li>
-        <li>1/4 teaspoon salt</li>
-    </ul>
-    <br>
-    <h2>Directions</h2>
-    <ol>
-        <li>Mix sugars, peanut butter, shortening, butter and egg in large bowl. Stir in remaining ingredients. Cover and refrigerate about 2 hours or until firm. </li>
-        <li>Heat oven to 375°F. </li>
-        <li>Shape dough into 1 1/4-inch balls. Place about 3 inches apart on ungreased cookie sheet. Flatten in crisscross pattern with fork dipped into sugar. </li>
-        <li>Bake 9 to 10 minutes or until light golden brown. Cool 5 minutes; remove from cookie sheet. Cool on wire rack. </li>
-    </ol>
+    <div class="grid-container">
+        <div class="item1">
+            <h4>Peanut Butter Cookie Recipe</h4>
+            <img src="https://images-gmi-pmc.edge-generalmills.com/dcd4f799-7353-4e56-ba50-623581cba3bc.jpg"  alt="Peanut Butter Cookies">
+            <h5>Ingredients</h5>
+            <ul class="list">
+                <li>1/2 cup granulated sugar</li>
+                <li>1/2 cup packed brown sugar</li>
+                <li>1/2 cup peanut butter</li>
+                <li>1/4 cup shortening</li>
+                <li>1/4 cpu butter, softened</li>
+                <li>1 egg</li>
+                <li>5/4 cups all purpose flour</li>
+                <li>3/4 teaspoon baking soda</li>
+                <li>1/2 teaspoon baking powder</li>
+                <li>1/4 teaspoon salt</li>
+            </ul>
+            <br>
+            <h5>Directions</h5>
+            <ol class="list">
+                <li>Mix sugars, peanut butter, shortening, butter and egg in large bowl. Stir in remaining ingredients. Cover and refrigerate about 2 hours or until firm. </li>
+                <li>Heat oven to 375°F. </li>
+                <li>Shape dough into 1 1/4-inch balls. Place about 3 inches apart on ungreased cookie sheet. Flatten in crisscross pattern with fork dipped into sugar. </li>
+                <li>Bake 9 to 10 minutes or until light golden brown. Cool 5 minutes; remove from cookie sheet. Cool on wire rack. </li>
+            </ol>
+        </div>
+        <div class="item2">
+            <h4>Cream Cheese Sugar Cookies</h4>
+            <img src="https://images-gmi-pmc.edge-generalmills.com/b6372893-d5af-4e18-a137-fd1cf9bce93e.jpg" alt="Cream Cheese Sugar Cookies">
+            <h5>Ingredients</h5>
+            <ul class="list">
+                <li>3/2 cups all-purpose flour</li>
+                <li>1 teaspoon baking soda</li>
+                <li>1/2 teaspoon baking powder</li>
+                <li>1/2 teaspoon salt</li>
+                <li>3/2 cups granulated sugar</li>
+                <li>1 package (8 oz) cream cheese, softened</li>
+                <li>1/2 cup butter, softened</li>
+                <li>1 egg</li>
+                <li>2 teaspoons vanilla</li>
+            </ul>
+            <br>
+            <h5>Directions</h5>
+            <ol class="list">
+                <li>Heat oven to 350°F. In small bowl, mix flour, baking powder, baking soda and salt; set aside. </li>
+                <li>In large bowl, beat granulated sugar, cream cheese and 1/2 cup softened butter with electric mixer on medium speed about 1 minute or until fluffy; scrape side of bowl. Beat in egg just until smooth. Stir in 2 teaspoons vanilla. On low speed, beat flour mixture into sugar mixture until well blended. Cover and refrigerate 15 minutes. </li>
+                <li>Shape dough into 60 (1-inch) balls. Place 2 inches apart on ungreased cookie sheets. Bake 10 to 12 minutes or until edges are set. Cool 2 minutes; remove from cookie sheet to cooling rack. Cool completely, about 15 minutes. </li>
+                <li>Meanwhile, in medium bowl, beat powdered sugar, 1/4 cup softened butter, 2 to 4 tablespoons milk and 1/2 teaspoon vanilla with spoon until smooth and fluffy. If frosting is too stiff to spread, add additional milk, 1 teaspoon at a time. Tint with food color. Using knife, spread slightly less than 1 teaspoon frosting on each cooled cookie; top with sprinkles. Store covered in airtight container at room temperature. </li>
+            </ol>
+        </div>
+        <div class="item3">
+            <h4>Ultimate Chocolate Chip Cookies</h4>
+            <img src="https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg" alt="Ultimate Chocolate Chip Cookies">
+            <h5>Ingredients</h5>
+            <ul class="list">
+                <li>3/2 cups all-purpose flour</li>
+                <li>1 teaspoon baking soda</li>
+                <li>1/2 teaspoon salt</li>
+                <li>1 cup butter, softened</li>
+                <li>3/4 cups granulated sugar</li>
+                <li>3/4 cups packed brown sugar</li>
+                <li>1 egg</li>
+                <li>1 teaspoon vanilla</li>
+                <li>2 cups semisweet chocolate chips</li>
+                <li>1 cup coarsely chopped nuts</li>
+            </ul>
+            <br>
+            <h5>Directions</h5>
+            <ol class="list">
+                <li>Heat oven to 375°F. In small bowl, mix flour, baking soda and salt; set aside. </li>
+                <li>In large bowl, beat softened butter and sugars with electric mixer on medium speed, or mix with spoon about 1 minute or until fluffy, scraping side of bowl occasionally. </li>
+                <li>Beat in egg and vanilla until smooth. Stir in flour mixture just until blended (dough will be stiff). Stir in chocolate chips and nuts. </li>
+                <li>Onto ungreased cookie sheets, drop dough by rounded tablespoonfuls 2 inches apart. </li>
+                <li>Bake 8 to 10 minutes or until light brown (centers will be soft). Cool 2 minutes; remove from cookie sheet to cooling rack. Cool completely, about 30 minutes. Store covered in airtight container. </li>
+            </ol>
+        </div>
+    </div>
+    
+    
 </body>
 </html>

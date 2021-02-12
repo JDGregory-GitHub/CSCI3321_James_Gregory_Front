@@ -1,0 +1,42 @@
+body{
+    border: 4px #5c3489 solid;
+    max-width: 1080px;
+    margin: 10px auto auto auto;
+    background-color: #1C1C1C;
+}
+
+header, main{
+    border: 4px #5c3489 solid;
+    margin: 5px 5px;
+    background-color: white;
+}
+
+header > img {
+    width: 100px;
+    margin-left: 5px;
+    margin-bottom: -15px;
+}
+
+header > a{
+    border: 4px #5c3489 solid;
+    color:black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px;
+    float: right;
+    margin-top: 60px;
+    margin-right: 5px;
+}
+header {
+    padding-bottom: 10px;
+}
+
+main > img{
+    display: block;
+    margin: 10px auto auto auto;
+    width: 300px
+}
+
+main > h1, h2{
+    text-align: center;
+}
