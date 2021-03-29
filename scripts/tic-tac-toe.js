@@ -4,46 +4,76 @@ var spots = 0;
 var currentPlayer= 'X';
 
 function placeMarker(spotId){
-    //Check if the game is NOT over
-    if(!gameOver()){
-        //Get spot by spotId
+    //If the game is NOT over
+    if(!gameOver){
+        //Get spot by Id
+        var spot = document.getElementById(spotId);
 
-        //Check if the spot is empty
-            //If empty place marker by changing innerHTML of spot
-            //Else depending on current player place X/O
-        
-            //Check if the current player has won the game
-            //If yes, display message, gameOver = true
-            //If tie, display message, gameOver = true & spots=9
-            //If no, switch player, spots++
-
-        //Else do nothing
+        //If empty place marker
+        if(spot.innerHTML == ""){
+            spot.innerHTML = currentPlayer;
+            spots++;
+            //If player won 
+            if(currentPlayerWon()){
+                updateGameStatus();
+            }
+            else{
+                if(currentPlayer == 'X')
+                    currentPlayer = 'O';
+                else
+                    currentPlayer = 'X';
+                    updateGameStatus();
+            }
+        }
     }
-    else
-        break;
-    //Else do nothing
-}
+}//end placeMarker   
 
 function currentPlayerWon(){
     //Get each spot using getElementById()
-    //ex: s1 = document.getElementById('1');
-    //s2, s3, s4, s5, s6, s7, s8, s9
+    s1 = document.getElementById('s1');
+    s2 = document.getElementById('s2');
+    s3 = document.getElementById('s3');
+    s4 = document.getElementById('s4'); 
+    s5 = document.getElementById('s5');
+    s6 = document.getElementById('s6');
+    s7 = document.getElementById('s7');
+    s8 = document.getElementById('s8');
+    s9 = document.getElementById('s9');
     
-    //Its true when new game starts so fix it
-        //(s1.innerHTML === s2.innerHTML && s2.innerHTML === s3.innerHTMl)
-        // || (s4.innerHTML === s5.innerHTML && s5.innerHTML === s6.innerHTMl)
-        // || (s7.innerHTML === s8.innerHTML && s8.innerHTML === s9.innerHTMl)
-    //Check 1st colum
-        //s1, s4, s7
-    //Check 2nd colum
-        //s2, s5, s8
-    //Check 3rd colum
-    //Check 1st diagonal
-    //Check 2nd diagonal
+    //If the player won 
+    if (   
+        (s1.innerHTML === s2.innerHTML && s2.innerHTML === s3.innerHTML && s2.innerHTML != "") 
+        || (s4.innerHTML === s5.innerHTML && s5.innerHTML === s6.innerHTML && s5.innerHTML != "")
+        || (s7.innerHTML === s8.innerHTML && s8.innerHTML === s9.innerHTML && s8.innerHTML != "") //checks 3rd row
+        || (s1.innerHTML === s4.innerHTML && s4.innerHTML === s7.innerHTML && s4.innerHTML != "") //checks 1st column
+        || (s2.innerHTML === s5.innerHTML && s5.innerHTML === s8.innerHTML && s5.innerHTML != "") //checks 2nd column
+        || (s3.innerHTML === s6.innerHTML && s6.innerHTML === s9.innerHTML && s6.innerHTML != "") //checks 3rd column
+        || (s1.innerHTML === s5.innerHTML && s5.innerHTML === s9.innerHTML && s5.innerHTML != "") //checks one diagonal
+        || (s3.innerHTML === s5.innerHTML && s5.innerHTML === s7.innerHTML && s5.innerHTML != "")//checks other diagonal
+        )
+            
+        gameOver = true; 
 
-    //if(!gameOver)
-        //if(spots == 9)
-            //gameOver = true; 
 
-    //retunr gameOver;
-}
+    if(!gameOver && spots == 9)
+        gameOver = true; 
+
+    return gameOver;
+}//end currentPlayerWon
+
+function updateGameStatus(){
+    var statusBoard = document.getElementById('status');
+    if (gameOver){
+        //if it's not a tie, display winner
+        if(spots != 9)
+            statusBoard.innerHTML = "Winner is " + currentPlayer + "!";
+        //else display tie 
+        else
+            statusBoard.innerHTML = "It is a tie.";
+
+    }
+    else{
+        //prompt user to make move
+        statusBoard.innerHTML = "Make a move Player " + currentPlayer;
+    }
+}//end updateGameStatus

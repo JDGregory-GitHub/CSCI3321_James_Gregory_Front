@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/tic-tac-toe.css">
+    <script src="/scripts/tic-tac-toe.js"></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div id="container">
+        <div id="s1" onclick="placeMarker('s1')"></div>
+        <div id="s2" onclick="placeMarker('s2')"></div>
+        <div id="s3" onclick="placeMarker('s3')"></div>
+        <div id="s4" onclick="placeMarker('s4')"></div>
+        <div id="s5" onclick="placeMarker('s5')"></div>
+        <div id="s6" onclick="placeMarker('s6')"></div>
+        <div id="s7" onclick="placeMarker('s7')"></div>
+        <div id="s8" onclick="placeMarker('s8')"></div>
+        <div id="s9" onclick="placeMarker('s9')"></div>
+    </div>
+
+    <p id="status">Make a move Player X</p>
+    <p id="rules">Tic-Tac-Toe Rules:<p>
+    <ol>
+        <li>You are X, your friend is O. Players take turns putting their marks in empty squares.</li>
+        <li>The first player to get 3 marks in a row is the winner.</li>
+        <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
+    </ol>
+    
+</body>
+</html>
